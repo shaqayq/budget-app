@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 class TransactionEntityTest < ActiveSupport::TestCase
   # test "the truth" do
