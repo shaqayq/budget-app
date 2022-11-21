@@ -1,0 +1,21 @@
+@import "font-awesome";
+@media only screen and (max-width: 640px) { 
+nav{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1b1be9de;
+    color: #fff;
+    padding: 25px;
+    height: 20px;
+}
+
+nav i {
+    font-size: 19px;
+}
+
+
+
+    
+}
