@@ -1,27 +1,31 @@
-<%= render 'partials/navigation' %>
-<h2>Log in</h2>
+
+<%= stylesheet_link_tag "login"%> 
+
+<%= stylesheet_link_tag "navbar"%> 
+
+<section class='signup-form'>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<nav class='navbar'>
+  <a href='/' > <i class="fa fa-arrow-left"></i></a>
+  <p><b>LOGIN</b></p>
+  <%= f.submit "Log in" , class: 'login-btn' %>
+</nav>
+
+ <div class='form-field'>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" , placeholder: 'Email'%>
   </div>
-
+      <hr>
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password"  , placeholder: 'Password'%>
   </div>
+ </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
+  
 <% end %>
+ 
+</section>
+<h4><%= link_to "Forgot your password?", new_password_path(resource_name) , class: 'forget-link'%><br /></h4>
 
-<%= render "devise/shared/links" %>
+

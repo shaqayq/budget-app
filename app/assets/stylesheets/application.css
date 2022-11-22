@@ -14,4 +14,7 @@
  *= require_self
  */
 
+ body {
+    margin: 0;
+ }
  

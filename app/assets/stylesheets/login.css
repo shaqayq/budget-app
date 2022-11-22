@@ -1,7 +1,45 @@
 @media only screen and (max-width: 640px) { 
 
+.uniq {
+    background-color: #aba7a74a;
+}
+.signup-form {
+    background-color: #fff;
+    border: 1px solid #d9d3d3c9;
+  
+}
 
-
-
+.field input {
+    margin: auto;
+    border: aliceblue;
+    padding: 11px;
     
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    justify-content: space-between;
+    background-color: #e6e5e5;
+}
+
+.forget-link {
+    text-decoration: none;
+    color: #443d3d80;
+    margin-left: 34%;
+
+}
+
+.login-btn {
+    background: #3939ec;
+    color: #fff;
+    border: aliceblue;
+    font-size: 15px;
+}
+    
+.form-field {
+    background-color: #fff;
+    padding: 11px;
+}
 }

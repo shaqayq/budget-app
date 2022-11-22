@@ -1,6 +1,6 @@
-@import "font-awesome";
+
 @media only screen and (max-width: 640px) { 
-nav{
+.navbar {
     
     display: flex;
     justify-content: space-between;
@@ -11,8 +11,12 @@ nav{
     height: 20px;
 }
 
-nav i {
+.navbar i {
     font-size: 19px;
+}
+
+.navbar a {
+    color: #fff;
 }
 
 
