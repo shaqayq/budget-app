@@ -1,17 +1,19 @@
 
-<%= stylesheet_link_tag "login"%> 
-
+<%= stylesheet_link_tag "auth"%> 
 <%= stylesheet_link_tag "navbar"%> 
-
 <section class='signup-form'>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name) , data: { turbo: false }) do |f| %>
 <nav class='navbar'>
   <a href='/' > <i class="fa fa-arrow-left"></i></a>
   <p><b>LOGIN</b></p>
   <%= f.submit "Log in" , class: 'login-btn' %>
 </nav>
-
+   <% if alert %>
+        <div class='login-alert'>
+        <%= alert %>
+        </div>
+      <%end%> 
  <div class='form-field'>
   <div class="field">
     <%= f.email_field :email, autofocus: true, autocomplete: "email" , placeholder: 'Email'%>
@@ -20,9 +22,8 @@
   <div class="field">
     <%= f.password_field :password, autocomplete: "current-password"  , placeholder: 'Password'%>
   </div>
+     
  </div>
-
-  
 <% end %>
  
 </section>

@@ -42,4 +42,27 @@ form {
     background-color: #fff;
     padding: 11px;
 }
+
+.login-alert {
+    background-color: #ff0000a1;
+    padding: 15px;
+    width: 214px;
+    border-radius: 12px;
+    margin-left: 16px;
+    color: #7c0000;
+}
+
+.error-list {
+    list-style: none;
+}
+
+#error_explanation {
+    background-color: #ff0000a1;
+    padding: 6px;
+    width: 494px;
+    border-radius: 12px;
+    margin-left: 16px;
+    color: #7c0000;
+}
+
 }
