@@ -1,7 +1,7 @@
 @media only screen and (max-width: 640px) { 
 
 .uniq {
-    background-color: #aba7a74a;
+    background-color: #f1f3f2;
 }
 .signup-form {
     background-color: #fff;
@@ -32,7 +32,7 @@ form {
 }
 
 .login-btn {
-    background: #3939ec;
+    background: #3778c2;
     color: #fff;
     border: aliceblue;
     font-size: 15px;
