@@ -3,7 +3,7 @@ class CreateCategories < ActiveRecord::Migration[7.0]
     create_table :categories do |t|
       t.references :user , null: false , foreign_key: true
       t.string :name
-      t.text :icone
+      t.text :icon
       t.timestamps
     end
   end

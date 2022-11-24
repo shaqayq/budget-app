@@ -10,7 +10,7 @@
  
     <a href="<%= user_category_path(current_user.id , item.id) %>">
     <div class='card'>
-        <%= image_tag "#{item.icone}" %>
+        <%= image_tag "#{item.icon}" %>
         <div id='info-part'>
             <h1><%= item.name%></h1>
             <p><i class='fa fa-calendar'></i> <%= item.created_at.strftime('%B %d %Y')%></p>
@@ -22,6 +22,6 @@
 </section>
 <div id='footer-btn'>
     <div id='btn'>
-        <h3><%= link_to 'ADD CATEGORY' , new_user_category_path%></h3>
+        <h3><%= link_to 'ADD NEW CATEGORY' , new_user_category_path%></h3>
     </div>
 </div>

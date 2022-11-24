@@ -2,10 +2,17 @@ class CategoryController < ApplicationController
 
     def index
         @category=Category.all
+
     end
 
     def new
         @category = Category.new
+    end
+
+    def show
+        @category= Category.find(params[:id])
+        @transaction_categories=@category.transaction_categories
+        @transaction_entity= @category.transaction_entities.order('created_at DESC')
     end
 
     def create
@@ -23,6 +30,6 @@ class CategoryController < ApplicationController
     end
 
     def category_params
-        params.require(:category).permit(:name , :icone)
+        params.require(:category).permit(:name , :icon)
     end
 end

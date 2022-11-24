@@ -1,0 +1,22 @@
+<%= stylesheet_link_tag "transaction"%> 
+<nav class='navbar'>
+  <a href="<%= user_category_index_path(current_user.id)%>" > <i class="fa fa-arrow-left"></i></a>
+  <p><b>NEW TRANSACTION</b></p>
+  <i class="fa fa-searc"></i>
+</nav>  
+<h1>NEW TRANSACTION</h1>
+
+<section class='category-form'>
+<%= form_with model: @transaction_entity , url: user_category_transaction_index_path , method: :post , local: true, class: "form-control" do |f|  %>
+    <div class="form-field">
+    <%= f.text_field :name , autofocus:  true , autocomplete: "name" , placeholder: 'Enter Transaction Name'%>
+    </div>
+    <div class="form-field">
+       <%= f.number_field :amount , autocomplete: "amount" , placeholder: 'Enter Tranaction Amount'%>
+    </div>
+
+     <div class="actions">
+    <%= f.submit "ADD" %>
+    </div>
+<%end%>
+</section>

@@ -1,1 +1,37 @@
-<h1>show page</h1>
+<%= stylesheet_link_tag "category"%> 
+<nav class='navbar'>
+  <a href="<%= user_category_index_path(current_user.id)%>" > <i class="fa fa-arrow-left"></i></a>
+  <p><b>DETAIL</b></p>
+  <i></i>
+</nav>
+<section class='total-amount'>
+<h4>Total Amount:</h4>
+<h4>4000$</h4>
+</section>
+
+<section class='detail'>
+    <div class='detail-head'>
+        <%= image_tag "#{@category.icon}" %>
+        <h4><%= @category.name%></h4>
+    </div>
+    <p>
+    lorem ipsum dolor sit amet consectetur adipisicing elit.
+     Quisquam, quod. Lorem ipsum dolor sit amet consectetur.
+    </p>
+    <hr>
+   
+    <% @transaction_entity.each do |item| %>
+      <div class='tranaction'>
+      <h5><%= item.name%></h5>
+      <p><%=item.amount%></p>
+      <i class='fa fa-calendar'></i> <%= item.created_at.strftime('%B %d %Y')%>
+    </div>
+    <% end %>
+
+</section>
+
+<div id='footer-btn'>
+    <div id='btn'>
+        <h3><%= link_to 'ADD NEW TRANSACTION' , new_user_category_transaction_path(current_user.id , @category.id)%></h3>
+    </div>
+</div>

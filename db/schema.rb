@@ -17,28 +17,28 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_103537) do
   create_table "categories", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "name"
-    t.text "icone"
+    t.text "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
   create_table "transaction_categories", force: :cascade do |t|
-    t.bigint "transaction_id", null: false
+    t.bigint "transaction_entities_id", null: false
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_transaction_categories_on_category_id"
-    t.index ["transaction_id"], name: "index_transaction_categories_on_transaction_id"
+    t.index ["transaction_entities_id"], name: "index_transaction_categories_on_transaction_entities_id"
   end
 
-  create_table "transactions", force: :cascade do |t|
+  create_table "transaction_entities", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "name"
     t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_transactions_on_user_id"
+    t.index ["user_id"], name: "index_transaction_entities_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,7 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_103537) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "categories", "users" 
+  add_foreign_key "categories", "users"
   add_foreign_key "transaction_categories", "categories"
-  add_foreign_key "transaction_categories", "transactions"
+  add_foreign_key "transaction_categories", "transaction_entities"
 end

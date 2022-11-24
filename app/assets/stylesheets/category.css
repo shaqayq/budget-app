@@ -3,6 +3,10 @@
     margin-top: 32px;
 }
 
+.transaction-list a {
+    text-decoration: none;
+}
+
 .card{
     display: flex;
     justify-content: space-around;
@@ -65,4 +69,37 @@
     border-radius: 6px;
 
 }
- }
+
+.detail {
+    width: 362px;
+    border: 1px solid #85808091;
+    margin: auto;
+    margin-top: 26px;
+    padding: 18px;
+    background-color: #fff;
+}
+
+.detail p {
+    margin: 0;
+}
+
+.detail-head {
+    display: flex;
+    align-items: center;
+}
+
+.detail-head img{
+    width: 42px;
+    margin: 27px;
+}
+
+.total-amount {
+    display: flex;
+    background-color: #fff;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+}
+
+
+
+}
