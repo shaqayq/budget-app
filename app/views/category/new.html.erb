@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag "category"%> 
+<nav class='navbar'>
+  <a href="<%= user_category_index_path(current_user.id)%>" > <i class="fa fa-arrow-left"></i></a>
+  <p><b>NEW CATEGORY</b></p>
+  <i class="fa fa-search"></i>
+</nav>
+<section class='category-form'>
+<%= form_with model: @category , url: user_category_index_path , method: :post , local: true, class: "form-control" do |f|  %>
+    <div class="form-field">
+    <%= f.text_field :name , autofocus:  true , autocomplete: "name" , placeholder: 'Enter Category Name'%>
+    </div>
+    <div class="form-field">
+       <%= f.text_field :icone , autocomplete: "name" , placeholder: 'Enter Icone Linke'%>
+    </div>
+
+     <div class="actions">
+    <%= f.submit "Save" %>
+    </div>
+<%end%>
+</section>
+
+
+

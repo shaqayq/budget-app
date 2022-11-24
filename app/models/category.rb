@@ -5,5 +5,5 @@ class Category < ApplicationRecord
     has_many :transactions , through:  :transaction_categories
     has_many :transaction_categories , dependent: :delete_all
 
-    validates :name , :icon , presence: true
+    validates :name , :icone , presence: true
 end

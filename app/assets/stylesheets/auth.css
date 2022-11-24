@@ -3,6 +3,8 @@
 .uniq {
     background-color: #f1f3f2;
 }
+
+
 .signup-form {
     background-color: #fff;
     border: 1px solid #d9d3d3c9;
@@ -16,7 +18,7 @@
     
 }
 
-form {
+.signup-form form {
     display: flex;
     flex-direction: column;
     row-gap: 20px;

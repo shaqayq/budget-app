@@ -5,6 +5,11 @@
     align-items: center;
 }
 
+#app-name {
+    font-size: xxx-large;
+    font-style: oblique;
+}
+
 #login-link {
     background: #1212e7;
     border: aliceblue;

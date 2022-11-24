@@ -1,0 +1,27 @@
+<%= stylesheet_link_tag "category"%> 
+<nav class='navbar'>
+  <i class="fa fa-bars"></i>
+  <p><b>CATEGORY</b></p>
+  <i class="fa fa-search"></i>
+</nav>
+
+<section class='transaction-list'>
+<% @category.each do |item| %>
+ 
+    <a href="<%= user_category_path(current_user.id , item.id) %>">
+    <div class='card'>
+        <%= image_tag "#{item.icone}" %>
+        <div id='info-part'>
+            <h1><%= item.name%></h1>
+            <p><i class='fa fa-calendar'></i> <%= item.created_at.strftime('%B %d %Y')%></p>
+        </div>
+        <h4>4500$</h4>
+    </div>
+    </a>
+<% end %>
+</section>
+<div id='footer-btn'>
+    <div id='btn'>
+        <h3><%= link_to 'ADD CATEGORY' , new_user_category_path%></h3>
+    </div>
+</div>

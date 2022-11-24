@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
    root to: "home#index"
 
-   resources :user 
+   resources :user do
+    resources :category
+   end
+  
   
 end
