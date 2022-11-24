@@ -1,6 +1,8 @@
 @media only screen and (max-width: 640px) {
 .transaction-list {
     margin-top: 32px;
+    max-height: 360px;
+    overflow-y: scroll;
 }
 
 .transaction-list a {
@@ -74,9 +76,11 @@
     width: 362px;
     border: 1px solid #85808091;
     margin: auto;
-    margin-top: 26px;
+    margin-top: 9px;
     padding: 18px;
     background-color: #fff;
+    max-height: 281px;
+    overflow-y: scroll;
 }
 
 .detail p {

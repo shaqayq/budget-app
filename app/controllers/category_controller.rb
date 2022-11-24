@@ -13,6 +13,7 @@ class CategoryController < ApplicationController
         @category= Category.find(params[:id])
         @transaction_categories=@category.transaction_categories
         @transaction_entity= @category.transaction_entities.order('created_at DESC')
+        @total_amount =  @category.transaction_entities.sum(:amount)
     end
 
     def create

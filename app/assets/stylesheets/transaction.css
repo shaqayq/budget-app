@@ -1,12 +1,15 @@
 @media only screen and (max-width: 640px) {
 
-.tranaction h5{
+.tranaction h4{
     display: inline;
 }
 
-.tranaction p {
+.tranaction #amount {
     float: right;
 }
 
+.tranaction #date{
+    margin-top: 25px;
+}
 
  }

@@ -6,7 +6,7 @@
 </nav>
 <section class='total-amount'>
 <h4>Total Amount:</h4>
-<h4>4000$</h4>
+<h4><%= @total_amount%>$</h4>
 </section>
 
 <section class='detail'>
@@ -22,10 +22,11 @@
    
     <% @transaction_entity.each do |item| %>
       <div class='tranaction'>
-      <h5><%= item.name%></h5>
-      <p><%=item.amount%></p>
-      <i class='fa fa-calendar'></i> <%= item.created_at.strftime('%B %d %Y')%>
+      <h4><%= item.name%></h4>
+      <p id='amount'><i class='fa fa-money'></i> <%=item.amount%></p><br/>
+      <p id='date'><i class='fa fa-calendar'></i> <%= item.created_at.strftime('%B %d %Y')%></p>
     </div>
+    <hr>
     <% end %>
 
 </section>
