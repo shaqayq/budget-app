@@ -4,8 +4,6 @@
   <p><b>NEW TRANSACTION</b></p>
   <i class="fa fa-searc"></i>
 </nav>  
-<h1>NEW TRANSACTION</h1>
-
 <section class='category-form'>
 <%= form_with model: @transaction_entity , url: user_category_transaction_index_path , method: :post , local: true, class: "form-control" do |f|  %>
     <div class="form-field">
@@ -14,9 +12,25 @@
     <div class="form-field">
        <%= f.number_field :amount , autocomplete: "amount" , placeholder: 'Enter Tranaction Amount'%>
     </div>
+    <div class='form-checkbox'>
+    <h4>Category:</h4>
+    <% @category.each do |category| %>
+     <label for="category_id" class="flex items-center gap-2 flex-nowrap"><%= category.name%></label>
+    <%= f.check_box :category_ids, {multiple: true, class: "check-box w-4 h-4 text-primaryDark bg-gray-100 rounded border-gray-300 focus:ring-0 focus:ring-offset-0 dark:border-gray-500"}, category.id, nil %>
+   <br/>
+      <% end %>
+    </div>
 
      <div class="actions">
     <%= f.submit "ADD" %>
     </div>
 <%end%>
 </section>
+
+<% flash.each do |type, messages| %>
+  <ul class='form-error'>
+     <% messages.each do |msg| %>
+        <li class="text-center text-red-500"><%= msg %> <i class="fa fa-times"></i></li>
+      <% end %>
+  </ul>
+<% end %> 

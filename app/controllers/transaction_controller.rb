@@ -6,18 +6,23 @@ class TransactionController < ApplicationController
 
    def new
     @transaction_entity=TransactionEntity.new
+    @category = Category.all
    end
 
     def create
-        @transaction = TransactionEntity.new(transaction_params)
+        @transaction = TransactionEntity.new(name:transaction_params[:name] , amount: transaction_params[:amount] )
         @transaction.user_id = current_user.id
         respond_to do |format|
             format.html do
                 if @transaction.save
-                    TransactionCategory.create( category_id: params[:category_id], transaction_entities_id: @transaction.id)
-                redirect_to user_category_index_path(current_user.id) , notice: 'Transaction Add Successfuly'
+                    transaction_params[:category_ids].each do |category_id|
+                        TransactionCategory.create( category_id: category_id, transaction_entities_id: @transaction.id)
+                    end
+                    
+                redirect_to user_category_path(current_user.id , params[:category_id]) , notice: 'Transaction Add Successfuly'
                 else
-                render :new  , notice: 'Transaction can`t Add!'
+                    flash[:error] = @transaction.errors.full_messages
+                    redirect_to new_user_category_transaction_path(current_user.id , params[:category_id]), status: :unprocessable_entity
                 end
                end
             end
@@ -26,6 +31,6 @@ class TransactionController < ApplicationController
     end
 
     def transaction_params
-        params.require(:transaction_entity).permit(:name , :amount)
+        params.require(:transaction_entity).permit(:name , :amount , category_ids: [])
     end
 end

@@ -4,13 +4,15 @@
   <p><b>NEW CATEGORY</b></p>
   <i class="fa fa-search"></i>
 </nav>
+
+
 <section class='category-form'>
 <%= form_with model: @category , url: user_category_index_path , method: :post , local: true, class: "form-control" do |f|  %>
     <div class="form-field">
     <%= f.text_field :name , autofocus:  true , autocomplete: "name" , placeholder: 'Enter Category Name'%>
     </div>
     <div class="form-field">
-       <%= f.text_field :icon , autocomplete: "name" , placeholder: 'Enter icon Linke'%>
+       <%= f.url_field :icon , autocomplete: "name" , placeholder: 'Enter icon Linke'%>
     </div>
 
      <div class="actions">
@@ -18,6 +20,13 @@
     </div>
 <%end%>
 </section>
+<% flash.each do |type, messages| %>
+  <ul class='form-error'>
+     <% messages.each do |msg| %>
+        <li class="text-center text-red-500"><%= msg %> <i class="fa fa-times"></i></li>
+      <% end %>
+  </ul>
+<% end %> 
 
 
 

@@ -24,7 +24,8 @@ class CategoryController < ApplicationController
                 if @category.save
                 redirect_to user_category_index_path(current_user.id) , notice: 'Category Add Successfuly'
                 else
-                render :new  , notice: 'Category can`t Add!'
+                    flash[:error] = @category.errors.full_messages
+                    redirect_to new_user_category_path(current_user.id), status: :unprocessable_entity
                 end
                end
             end

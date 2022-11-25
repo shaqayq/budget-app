@@ -8,7 +8,11 @@
 <h4>Total Amount:</h4>
 <h4><%= @total_amount%>$</h4>
 </section>
-
+<% if notice%>
+ <div id='alert-box'>
+  <%= notice%><i class="fa fa-check" aria-hidden="true"></i>
+</div>
+<%end%>
 <section class='detail'>
     <div class='detail-head'>
         <%= image_tag "#{@category.icon}" %>
