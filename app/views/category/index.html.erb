@@ -2,9 +2,13 @@
 <nav class='navbar'>
   <i class="fa fa-bars"></i>
   <p><b>CATEGORY</b></p>
-  <i class="fa fa-search"></i>
+  <a href="<%=  destroy_user_session_path%>"><i class="fa fa-user"></i></a>
 </nav>
-
+<% if notice%>
+<div id='alert-box'>
+<%= notice%><i class="fa fa-check"></i>
+</div>
+<%end%>
 <section class='transaction-list'>
 <% @category.each do |item| %>
  
@@ -15,7 +19,7 @@
             <h1><%= item.name%></h1>
             <p><i class='fa fa-calendar'></i> <%= item.created_at.strftime('%B %d %Y')%></p>
         </div>
-        <h4>4500$</h4>
+        <h4><i class='fa fa-money'></i> <%= item.transaction_entities.sum(:amount)%>$</h4>
     </div>
     </a>
 <% end %>

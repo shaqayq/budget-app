@@ -6,6 +6,6 @@ class TransactionEntity < ApplicationRecord
 
     validates :name, presence: true, length: { maximum: 30 }
     validates :amount, presence: true, numericality: { greater_than: 0 }
-   validates :category_ids ,  acceptance: { message: 'must select at least one ' }
+   
  
 end
