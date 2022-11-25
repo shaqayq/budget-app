@@ -1,0 +1,42 @@
+<%= stylesheet_link_tag "category"%> 
+<nav class='navbar'>
+  <a href="<%= user_category_index_path(current_user.id)%>" > <i class="fa fa-arrow-left"></i></a>
+  <p><b>DETAIL</b></p>
+  <i></i>
+</nav>
+<section class='total-amount'>
+<h4>Total Amount:</h4>
+<h4><%= @total_amount%>$</h4>
+</section>
+<% if notice%>
+ <div id='alert-box'>
+  <%= notice%><i class="fa fa-check" aria-hidden="true"></i>
+</div>
+<%end%>
+<section class='detail'>
+    <div class='detail-head'>
+        <%= image_tag "#{@category.icon}" %>
+        <h4><%= @category.name%></h4>
+    </div>
+    <p>
+    lorem ipsum dolor sit amet consectetur adipisicing elit.
+     Quisquam, quod. Lorem ipsum dolor sit amet consectetur.
+    </p>
+    <hr>
+   
+    <% @transaction_entity.each do |item| %>
+      <div class='tranaction'>
+      <h4><%= item.name%></h4>
+      <p id='amount'><i class='fa fa-money'></i> <%=item.amount%></p><br/>
+      <p id='date'><i class='fa fa-calendar'></i> <%= item.created_at.strftime('%B %d %Y')%></p>
+    </div>
+    <hr>
+    <% end %>
+
+</section>
+
+<div id='footer-btn'>
+    <div id='btn'>
+        <h3><%= link_to 'ADD NEW TRANSACTION' , new_user_category_transaction_path(current_user.id , @category.id)%></h3>
+    </div>
+</div>

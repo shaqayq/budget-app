@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin: 0;
+}
+
+#alert-box {
+  background-color: #008000ba;
+  width: 215px;
+  padding: 10px;
+  border-radius: 8px;
+  margin-left: 10px;
+  margin-top: 13px;
+  color: #fff;
+}
+
+.form-error {
+  list-style: none;
+  width: 94%;
+  border-radius: 5px;
+  margin: 0;
+  padding: 12px;
+}
+
+.form-error li {
+  background-color: #ff00008f;
+  padding: 10px;
+  color: #720c0c;
+  margin-bottom: 16px;
+  text-align: center;
+  font-weight: 600;
+}

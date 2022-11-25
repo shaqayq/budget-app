@@ -1,6 +1,6 @@
 class CreateTransactions < ActiveRecord::Migration[7.0]
   def change
-    create_table :transactions do |t|
+    create_table :transaction_entities do |t|
       t.references :user , null: false , foriegn_key: true , index: true
       t.string :name 
       t.integer :amount

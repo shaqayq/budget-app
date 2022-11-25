@@ -1,0 +1,31 @@
+<%= stylesheet_link_tag "category"%> 
+<nav class='navbar'>
+  <i class="fa fa-bars"></i>
+  <p><b>CATEGORY</b></p>
+  <a href="<%=  destroy_user_session_path%>"><i class="fa fa-sign-out"></i></a>
+</nav>
+<% if notice%>
+<div id='alert-box'>
+<%= notice%><i class="fa fa-check"></i>
+</div>
+<%end%>
+<section class='transaction-list'>
+<% @category.each do |item| %>
+ 
+    <a href="<%= user_category_path(current_user.id , item.id) %>">
+    <div class='card'>
+        <%= image_tag "#{item.icon}" %>
+        <div id='info-part'>
+            <h1><%= item.name%></h1>
+            <p><i class='fa fa-calendar'></i> <%= item.created_at.strftime('%B %d %Y')%></p>
+        </div>
+        <h4><i class='fa fa-money'></i> <%= item.transaction_entities.sum(:amount)%>$</h4>
+    </div>
+    </a>
+<% end %>
+</section>
+<div id='footer-btn'>
+    <div id='btn'>
+        <h3><%= link_to 'ADD NEW CATEGORY' , new_user_category_path%></h3>
+    </div>
+</div>
