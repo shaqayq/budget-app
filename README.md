@@ -5,8 +5,11 @@
 ## project Description.
 
 
-- The Blog app is a classic example of a blog website. It is a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+- A mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
+
+## Live demo:
+You can check out the live demo [here]().
 
 ## Built With
 
@@ -30,21 +33,15 @@
 - With git, clone the code to your machine, or download a ZIP of all the files directly.
 - Download the ZIP file from this location or run the following git command to clone the files to your machine:
 
-> - git clone https://github.com/https://github.com/shaqayq/blog-app.git
+> - git clone https://github.com/shaqayq/budget-app.git
 
 ### Install
 
 - After opening the files in Visual Studio Code, open the VS Code integrated terminal and run the following commands:
 
-> bundle init
+> bundle init ,
 > bundle install
 
-
-### Usage
-
-- Run the command in your terminal below to run the ruby program
-
->  ruby main.rd to run
 
 ### Run tests
 
@@ -60,18 +57,12 @@
 - Twitter: [@Darwazi-shaqayq](https://twitter.com/darwazi-shaqayq)
 - LinkedIn: [shaqayq-darwazi](https://linkedin.com/in/shaqayq-darwazi)
 
-👤 **Dorian Urem**
-
-- GitHub: [@dodoburner](https://github.com/dodoburner)
-- Twitter: [@DorianUrem](https://twitter.com/DorianUrem)
-- LinkedIn: [Dorian Urem](https://www.linkedin.com/in/dorian-urem-252baa237/)
-
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/TahenyBELGUITH/Ruby_group_capstone-_catalog_of_my_things.git/issues).
+Feel free to check the [issues page](https://github.com/shaqayq/budget-app/issues).
 
 ## Show your support
 
@@ -85,4 +76,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
+This project is [ Creative Commons license ](https://creativecommons.org/licenses/by-nc/4.0/) licensed.
