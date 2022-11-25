@@ -56,5 +56,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_103537) do
 
   add_foreign_key "categories", "users"
   add_foreign_key "transaction_categories", "categories"
-  add_foreign_key "transaction_categories", "transaction_entities"
+  add_foreign_key "transaction_categories", "transaction_entities", column: "transaction_entities_id"
 end
