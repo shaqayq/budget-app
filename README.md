@@ -9,7 +9,7 @@
 
 
 ## Live demo:
-You can check out the live demo [here]().
+You can check out the live demo for mobile version[here](https://easy-transaction.herokuapp.com/).
 
 ## Built With
 
