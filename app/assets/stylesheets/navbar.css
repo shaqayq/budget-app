@@ -1,7 +1,6 @@
 
-@media only screen and (max-width: 640px) { 
-.navbar {
-    
+@media only screen and (max-width: 640px) {
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,17 +8,13 @@
     color: #fff;
     padding: 25px;
     height: 20px;
-}
+  }
 
-.navbar i {
+  .navbar i {
     font-size: 19px;
-}
+  }
 
-.navbar a {
+  .navbar a {
     color: #fff;
-}
-
-
-
-    
+  }
 }

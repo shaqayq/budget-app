@@ -31,7 +31,7 @@ class TransactionController < ApplicationController
                 error_array = @transaction.errors.full_messages
                 error_array << 'Please select at least one category'
                 flash[:error] = error_array
-                redirect_to new_user_category_transaction_path(current_user.id , params[:category_id]), status: :unprocessable_entity
+                redirect_to request.referrer, status: :unprocessable_entity
               end
             end
         end
