@@ -1,0 +1,35 @@
+<%= stylesheet_link_tag "auth"%> 
+<%= stylesheet_link_tag "navbar"%> 
+<section class='signup-form'>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: false }) do |f| %>
+  
+  <nav class='navbar'>
+    <a href='/' > <i class="fa fa-arrow-left"></i></a>
+    <p><b>REGISTER</b></p>
+    <%= f.submit "Next" , class: 'login-btn' %>
+  </nav>
+
+<div class='form-field'>
+   <div class="field">
+    <%= f.text_field :name, autofocus: true , placeholder: 'Full Name'%>
+  </div>
+  <hr>
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" , placeholder: 'Email'%>
+  </div>
+  <hr>
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "new-password" , placeholder: "Password"%>
+  </div>
+  <hr>
+  <div class="field">
+    
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" , placeholder: 'Confirm Password'%>
+  </div>
+
+</div>
+<%= render "devise/shared/error_messages", resource: resource %>
+<% end %>
+</section>
+

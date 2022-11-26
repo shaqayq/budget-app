@@ -1,0 +1,25 @@
+@media only screen and (max-width: 640px) {
+  .tranaction h4 {
+    display: inline;
+  }
+
+  .tranaction #amount {
+    float: right;
+  }
+
+  .tranaction #date {
+    margin-top: 25px;
+  }
+
+  .form-checkbox {
+    margin-left: 19px;
+  }
+
+  .form-checkbox input {
+    width: 26px;
+  }
+
+  .form-checkbox label {
+    margin-left: 20px;
+  }
+}
